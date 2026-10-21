@@ -184,8 +184,8 @@ const CONFIG = {
   words: ["fast","secure","weird","clean","shippable","loud"],
   team: [
     {name:"Veekobuilds", role:"Frontend and UI", color:"--yellow", bio:"Turns Figma chaos into pixel-tight interfaces that still feel alive.", stack:["React","Tailwind","Motion"], link:"#"},
-    {name:"Yaphannybuilds", role:"Backend and data", color:"--pink", bio:"APIs, databases and the plumbing nobody sees until it breaks.", stack:["Supabase","Postgres","APIs"], link:"#"},
-    {name:"Jajaprotocols", role:"Product and design", color:"--mint", bio:"Brand, copy and the “wait, what if we…” ideas that make users stay.", stack:["Figma","Brand","Strategy"], link:"#"},
+    {name:"Yaphanybuilds", role:"Backend and data", color:"--pink", bio:"APIs, databases and the server-side magic nobody sees until it breaks.", stack:["Supabase","Postgres","APIs"], link:"#"},
+    {name:"thestoicgeek", init:"J", role:"Product and design", color:"--mint", bio:"Brand, copy and the “wait, what if we…” ideas that make users stay.", stack:["Figma","Brand","Strategy"], link:"#"},
     {name:"TrotskyBuilds", role:"CEO, security and full-stack", color:"--sky", bio:"Threat intel by day, ships platforms by night. Makes sure nothing leaks.", stack:["Next.js","Node","OSINT"], link:"#"}
   ],
   work: [
@@ -205,7 +205,7 @@ $("workList").innerHTML=CONFIG.work.map(w=>
   `<a href="${w.url}" ${w.url.startsWith("http")?'target="_blank" rel="noopener"':''}><h3>${w.name}</h3><span class="st mono">${w.tag}</span><p>${w.desc}</p></a>`).join("");
 
 $("teamList").innerHTML=CONFIG.team.map(m=>
-  `<article class="mem" style="--c:var(${m.color})"><div class="av">${m.name[0]}</div><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p><div class="chips">${m.stack.map(s=>`<span>${s}</span>`).join("")}</div><a href="${m.link}">Say hi</a></article>`).join("");
+  `<article class="mem" style="--c:var(${m.color})"><div class="av">${m.init||m.name[0]}</div><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p><div class="chips">${m.stack.map(s=>`<span>${s}</span>`).join("")}</div><a href="${m.link}">Say hi</a></article>`).join("");
 
 const bits=["VYJT","ship it","no cap","HMR","zero build time","⚡","fast","secure","weird"];
 $("mq").innerHTML=Array(2).fill(bits.map(b=>`<span style="margin:0 22px">${b}</span>`).join("")).join("");
