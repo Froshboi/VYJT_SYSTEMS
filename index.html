@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>VYJT SYSTEMS: four devs, zero build time</title>
-<meta name="description" content="VYJT SYSTEMS is a four-person dev team building fast, secure web products, from fintech to security.">
+<title>VYST SYSTEMS: four devs, zero build time</title>
+<meta name="description" content="VYST SYSTEMS is a four-person dev team building fast, secure web products, from fintech to security.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="VYJT SYSTEMS">
-<meta property="og:title" content="VYJT SYSTEMS: four devs, zero build time">
+<meta property="og:site_name" content="VYST SYSTEMS">
+<meta property="og:title" content="VYST SYSTEMS: four devs, zero build time">
 <meta property="og:description" content="Fast, secure web products from a four-person dev team in Port Harcourt. See what we’ve shipped.">
 <meta property="og:url" content="https://vyjtsystems.vercel.app/">
 <meta property="og:image" content="https://vyjtsystems.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="VYJT SYSTEMS: four devs building fast, secure web products">
+<meta property="og:image:alt" content="VYST SYSTEMS: four devs building fast, secure web products">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VYJT SYSTEMS: four devs, zero build time">
+<meta name="twitter:title" content="VYST SYSTEMS: four devs, zero build time">
 <meta name="twitter:description" content="Fast, secure web products from a four-person dev team in Port Harcourt.">
 <meta name="twitter:image" content="https://vyjtsystems.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,8 @@ h2{font-size:clamp(34px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0 0
 .mem{background:var(--bg2);border-radius:20px;padding:22px;border:3px solid var(--c);position:relative;transition:transform .2s}
 .mem:nth-child(odd){transform:rotate(-1deg)}.mem:nth-child(even){transform:rotate(1deg)}
 .mem:hover{transform:rotate(0) translateY(-6px)}
-.av{width:68px;height:68px;border-radius:50%;background:var(--c);color:#1E1250;display:grid;place-items:center;font-weight:800;font-size:26px;margin-bottom:14px}
+.av{position:relative;overflow:hidden;width:84px;height:84px;border-radius:50%;background:var(--c);color:#1E1250;display:grid;place-items:center;font-weight:800;font-size:30px;margin-bottom:14px}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .mem h3{margin:0;font-size:24px;letter-spacing:-.02em}
 .role{color:var(--c);font-weight:700;margin:2px 0 10px}
 .mem p{margin:0 0 12px;font-size:16px;color:var(--mute)}
@@ -135,7 +136,7 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 <body>
 <div class="wrap">
   <header>
-    <a class="logo" href="#top">VYJT<b>.</b>SYSTEMS</a>
+    <a class="logo" href="#top">VYST<b>.</b>SYSTEMS</a>
     <nav>
       <a href="#work">Work</a><a href="#team">Team</a><a href="#contact">Hire us</a>
     </nav>
@@ -144,10 +145,10 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 
   <main id="top">
     <div class="hero">
-      <h1 aria-label="VYJT Systems"><span class="y">V</span><span>Y</span><span>J</span><span>T</span><small class="sys">SYSTEMS</small></h1>
+      <h1 aria-label="VYST Systems"><span class="y">V</span><span>Y</span><span>S</span><span>T</span><small class="sys">SYSTEMS</small></h1>
       <div class="hmr mono" aria-hidden="true">
-        <div><span class="dim">$</span> vyjt dev</div>
-        <div><span class="ok">VYJT ready</span> in <span id="ms">47</span> ms</div>
+        <div><span class="dim">$</span> vyst dev</div>
+        <div><span class="ok">VYST ready</span> in <span id="ms">47</span> ms</div>
         <div><span class="dim">[hmr]</span> updated <span id="file">/team/vibes.tsx</span></div>
       </div>
       <p class="tag">Four devs who build <em id="swap">fast</em> web products, with security baked in from line one.</p>
@@ -181,7 +182,7 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 
   <section id="team">
     <h2>The four of us</h2>
-    <p class="sub">V, Y, J, T: yes, the name is our initials. Small team, direct line to the person writing your code.</p>
+    <p class="sub">V, Y, S, T: yes, the name is our initials. Small team, direct line to the person writing your code.</p>
     <div class="team" id="teamList"></div>
   </section>
 
@@ -192,7 +193,7 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
   </section>
 
   <footer>
-    <span>© <span id="yr">2026</span> VYJT SYSTEMS. Port Harcourt, Nigeria.</span>
+    <span>© <span id="yr">2026</span> VYST SYSTEMS. Port Harcourt, Nigeria.</span>
   </footer>
 </div>
 
@@ -202,10 +203,10 @@ const CONFIG = {
   email: "Trotskybuilds@gmail.com",
   words: ["fast","secure","weird","clean","shippable","loud"],
   team: [
-    {name:"Veekobuilds", role:"Frontend and UI", color:"--yellow", bio:"Turns Figma chaos into pixel-tight interfaces that still feel alive.", stack:["React","Tailwind","Motion"], link:"#"},
-    {name:"Yaphanybuilds", role:"Backend and data", color:"--pink", bio:"APIs, databases and the server-side magic nobody sees until it breaks.", stack:["Supabase","Postgres","APIs"], link:"#"},
-    {name:"thestoicgeek", init:"J", role:"Product and design", color:"--mint", bio:"Brand, copy and the “wait, what if we…” ideas that make users stay.", stack:["Figma","Brand","Strategy"], link:"#"},
-    {name:"TrotskyBuilds", role:"CEO, security and full-stack", color:"--sky", bio:"Threat intel by day, ships platforms by night. Makes sure nothing leaks.", stack:["Next.js","Node","OSINT"], link:"#"}
+    {name:"Veekobuilds", photo:"photos/veeko.jpg", role:"Frontend and UI", color:"--yellow", bio:"Turns Figma chaos into pixel-tight interfaces that still feel alive.", stack:["React","Tailwind","Motion"], link:"#"},
+    {name:"Yaphanybuilds", photo:"photos/yaphany.jpg", role:"Backend and data", color:"--pink", bio:"APIs, databases and the server-side magic nobody sees until it breaks.", stack:["Supabase","Postgres","APIs"], link:"#"},
+    {name:"thestoicgeek", init:"S", photo:"photos/stoic.jpg", role:"Product and design", color:"--mint", bio:"Brand, copy and the “wait, what if we…” ideas that make users stay.", stack:["Figma","Brand","Strategy"], link:"#"},
+    {name:"TrotskyBuilds", photo:"photos/trotsky.jpg", role:"CEO, security and full-stack", color:"--sky", bio:"Threat intel by day, ships platforms by night. Makes sure nothing leaks.", stack:["Next.js","Node","OSINT"], link:"#"}
   ],
   work: [
     {name:"EventsHub", desc:"Event ticketing platform built for the Nigerian market.", tag:"live", url:"https://eventshubs.vercel.app"},
@@ -226,9 +227,9 @@ $("workList").innerHTML=CONFIG.work.map(w=>
   `<a href="${w.url}" ${w.url.startsWith("http")?'target="_blank" rel="noopener"':''}><h3>${w.name}</h3><span class="st mono">${w.tag}</span><p>${w.desc}</p></a>`).join("");
 
 $("teamList").innerHTML=CONFIG.team.map(m=>
-  `<article class="mem" style="--c:var(${m.color})"><div class="av">${m.init||m.name[0]}</div><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p><div class="chips">${m.stack.map(s=>`<span>${s}</span>`).join("")}</div><a href="${m.link}">Say hi</a></article>`).join("");
+  `<article class="mem" style="--c:var(${m.color})"><div class="av">${m.photo?`<img src="${m.photo}" alt="${m.name}" onerror="this.remove()">`:''}<span>${m.init||m.name[0]}</span></div><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p><div class="chips">${m.stack.map(s=>`<span>${s}</span>`).join("")}</div><a href="${m.link}">Say hi</a></article>`).join("");
 
-const bits=["VYJT","ship it","no cap","HMR","zero build time","⚡","fast","secure","weird"];
+const bits=["VYST","ship it","no cap","HMR","zero build time","⚡","fast","secure","weird"];
 $("mq").innerHTML=Array(2).fill(bits.map(b=>`<span style="margin:0 22px">${b}</span>`).join("")).join("");
 
 /* the one gag: the tagline hot-reloads without a page refresh */
