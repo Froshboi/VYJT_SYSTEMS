@@ -100,19 +100,90 @@ h2{font-size:clamp(34px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0 0
 .sub{color:var(--mute);max-width:560px;margin:0 0 34px}
 
 /* services */
-.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:3px solid var(--ink)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;border-top:3px solid var(--ink)}
 .svc div{padding:22px 22px 26px 0;border-bottom:3px solid var(--ink)}
 .svc h3{margin:0 0 6px;font-size:23px;letter-spacing:-.02em}
 .svc p{margin:0;color:var(--mute);font-size:16px}
 
+/* trusted brands */
+.trusted{width:100%;padding:64px 0 24px;overflow:hidden}
+.trusted-head{width:min(1080px,calc(100% - 44px));margin:0 auto 24px}
+.trusted-head .sub{margin-bottom:0}
+.brand-marquee{overflow:hidden;padding:12px 0 20px}
+.brand-track{display:flex;width:max-content;animation:brand-scroll 30s linear infinite}
+.brand-marquee:hover .brand-track,.brand-marquee:focus-within .brand-track{animation-play-state:paused}
+.brand-group{display:flex;flex:none;align-items:center;gap:16px;margin:0;padding:0 8px;list-style:none}
+.brand{width:226px;height:108px;display:grid;flex:none;place-items:center;padding:13px;border:2px solid #ffffff45;border-radius:16px;background:#d9d1ff;box-shadow:4px 4px 0 #150c3d}
+.brand:nth-child(4n+2){background:#d8eddf}
+.brand:nth-child(4n+3){background:#d7e7f4}
+.brand:nth-child(4n+4){background:#f5dfe7}
+.brand img{display:block;width:100%;height:82px;object-fit:contain;mix-blend-mode:multiply}
+@keyframes brand-scroll{to{transform:translateX(-50%)}}
+
+/* reviews */
+.review-track{display:flex;gap:16px;overflow-x:auto;padding:8px 5px 18px;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;touch-action:pan-x;user-select:none}
+.review-track::-webkit-scrollbar{display:none}
+.review-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
+.review-card{width:min(370px,86vw);min-height:236px;flex:0 0 min(370px,86vw);scroll-snap-align:start;display:flex;flex-direction:column;padding:22px;border:2px solid var(--ink);border-radius:18px;background:var(--bg2);box-shadow:5px 5px 0 var(--ink)}
+.review-card:nth-child(3n+2){--review-accent:var(--pink)}
+.review-card:nth-child(3n+3){--review-accent:var(--mint)}
+.review-top{display:flex;align-items:center;gap:12px}
+.review-avatar{width:58px;height:58px;flex:none;overflow:hidden;border:2px solid var(--review-accent,var(--yellow));border-radius:50%;background:var(--bg)}
+.review-avatar svg{display:block;width:100%;height:100%}
+.review-person{min-width:0}
+.review-person strong{display:block;font-size:16px}
+.review-person small{color:var(--mute);font-size:11px}
+.review-rating{margin:18px 0 8px;color:var(--yellow);font-size:22px;letter-spacing:.1em}
+.review-rating-label{margin:-7px 0 12px;color:var(--mute);font-size:10px}
+.review-quote{margin:0;color:var(--ink);font-size:16px;font-weight:700;line-height:1.55}
+.review-card:active{cursor:grabbing}
+
 /* work */
-.work a{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:26px 0;border-top:3px solid var(--ink);text-decoration:none}
-.work a:last-child{border-bottom:3px solid var(--ink)}
+.work a,.work .work-card{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:26px 0;border-top:3px solid var(--ink);text-decoration:none}
+.work a:last-child,.work .work-card:last-child{border-bottom:3px solid var(--ink)}
 .work h3{margin:0;font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;line-height:1;transition:transform .2s,color .2s}
 .work a:hover h3{transform:translateX(12px);color:var(--accent)}
 .work p{margin:0;color:var(--mute);grid-column:1;max-width:620px}
 .work .st{grid-column:2;grid-row:1/3;align-self:center;font-size:13px;border:2px solid currentColor;border-radius:999px;padding:3px 12px;white-space:nowrap}
-@media(max-width:560px){.work a{grid-template-columns:1fr}.work .st{grid-column:1;grid-row:auto;justify-self:start;margin-top:6px}}
+.project-shot{grid-column:1/-1;min-height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:2px solid var(--ink);border-radius:12px;padding:14px;background:var(--shot-bg,var(--bg2));color:var(--shot-ink,var(--ink))}
+.mini-site{width:min(100%,510px);min-height:145px;overflow:hidden;padding:13px;border:1px solid color-mix(in srgb,var(--shot-ink,var(--ink)) 25%,transparent);border-radius:9px;background:color-mix(in srgb,var(--shot-bg,var(--bg2)) 80%,var(--bg));color:var(--shot-ink,var(--ink));box-shadow:0 9px 24px #150c3d24}
+.mini-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:9px;border-bottom:1px solid color-mix(in srgb,var(--ink) 18%,transparent);font-size:9px;font-weight:800}
+.mini-nav span:last-child{padding:4px 8px;border-radius:99px;background:var(--shot-accent,var(--accent));color:#1E1250;font-size:8px}
+.mini-content{padding-top:11px}
+.mini-title{margin:0 0 4px;font-size:15px;font-weight:800;letter-spacing:-.04em;line-height:1.2}
+.mini-copy{margin:0 0 9px;font-size:9px;opacity:.78}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.mini-tile{min-height:46px;display:flex;flex-direction:column;justify-content:end;gap:3px;padding:7px;border:1px solid color-mix(in srgb,var(--shot-ink,var(--ink)) 17%,transparent);border-radius:5px;background:color-mix(in srgb,var(--shot-bg,var(--bg2)) 70%,var(--bg));font-size:8px;font-weight:700}
+.mini-tile strong{font-size:9px}
+.mini-tile.featured{background:var(--shot-accent,var(--accent));color:#1E1250}
+.mini-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.mini-pills span{padding:4px 7px;border:1px solid color-mix(in srgb,var(--ink) 20%,transparent);border-radius:99px;font-size:7px}
+.mini-site.events{--shot-bg:#34217c;--shot-ink:#f7f3ff;--shot-accent:#ffd23f}
+.mini-site.stays{--shot-bg:#164c46;--shot-ink:#effff4;--shot-accent:#7cf5c8}
+.mini-site.ponhub{--shot-bg:#10131f;--shot-ink:#f4f1ff;--shot-accent:#7cf5c8}
+.mini-site.handl{--shot-bg:#292044;--shot-ink:#fff7ee;--shot-accent:#ffb977}
+.mini-site.cashora{--shot-bg:#182a63;--shot-ink:#f2f5ff;--shot-accent:#7fb5ff}
+.work .work-card .st{grid-column:2;grid-row:2/4;align-self:center}
+.work .work-card p{max-width:620px}
+.work .work-card h3{margin:0}
+.work .work-card .project-shot{margin-bottom:5px}
+.work .work-card .st.in-progress{color:var(--mute)}
+.work a .preview-cta{display:flex;align-items:center;gap:8px;grid-column:1/-1;justify-self:start;margin-top:5px;font-size:13px;font-weight:700}
+.work .work-card .preview-cta{grid-column:1/-1;justify-self:start;margin-top:5px;color:var(--mute);font-size:13px}
+.work a .preview-cta span{transition:transform .2s}
+.work a:hover .preview-cta span{transform:translate(3px,-3px)}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.principle{padding:20px;border:2px solid var(--ink);border-radius:14px;background:var(--bg2);box-shadow:4px 4px 0 var(--ink)}
+.principle:nth-child(4n+2){--accent:var(--pink);transform:rotate(1deg)}
+.principle:nth-child(4n+3){--accent:var(--mint);transform:rotate(-1deg)}
+.principle:nth-child(4n+4){--accent:var(--sky);transform:rotate(1deg)}
+.principle .number{color:var(--accent);font-size:13px}
+.principle h3{margin:18px 0 7px;font-size:22px;letter-spacing:-.03em}
+.principle p{margin:0;color:var(--mute);font-size:15px;line-height:1.6}
+@media(max-width:560px){.work a,.work .work-card{grid-template-columns:1fr;gap:8px 12px;padding:20px 0}.work a .st,.work .work-card .st{grid-column:1;grid-row:auto;justify-self:start;margin-top:0}.project-shot{min-height:166px;padding:10px}.mini-site{min-height:130px;padding:10px}.mini-tile{min-height:40px;padding:5px}.work a .preview-cta,.work .work-card .preview-cta{grid-column:1}.work p{grid-column:1}}
+@media(max-width:640px){.brand{width:180px;height:92px}.brand img{height:72px}.brand-group{gap:12px}.brand-marquee{padding:10px 0 18px}.trusted{padding-top:52px}}
+@media(max-width:560px){.review-card{min-height:224px;padding:18px}}
+@media(max-width:560px){.marq{margin:10px 0;transform:none}}
 
 /* team */
 .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:20px}
@@ -130,10 +201,13 @@ h2{font-size:clamp(34px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0 0
 
 /* contact */
 .contact{padding-bottom:50px}
-.big{display:block;font-size:clamp(34px,8.4vw,92px);font-weight:800;letter-spacing:-.045em;line-height:.95;text-decoration:none;word-break:break-word}
+.big{display:inline-flex;align-items:center;gap:16px;font-size:clamp(34px,8.4vw,92px);font-weight:800;letter-spacing:-.045em;line-height:.95;text-decoration:none;word-break:break-word;border:0;background:none;padding:0}
+.big span{font-size:.55em;transition:transform .2s}
+.big:hover span{transform:translate(5px,-5px)}
 .big:hover{color:var(--accent)}
 footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px;color:var(--mute)}
-@media(prefers-reduced-motion:reduce){.marq div{animation:none}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){.marq div,.brand-track{animation:none}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){.review-track{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -141,7 +215,7 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
   <header>
     <a class="logo" href="#top">VYST<b>.</b>SYSTEMS</a>
     <nav>
-      <a href="#work">Work</a><a href="#team">Team</a><a href="#contact">Hire us</a>
+      <a href="#trusted">Trusted by</a><a href="#work">Work</a><a href="#principles">How we work</a><a href="#team">Team</a><a href="#contact">Hire us</a>
     </nav>
     <button class="vibe" id="vibe" aria-label="Change accent colour">swap vibe</button>
   </header>
@@ -154,7 +228,7 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
         <div><span class="ok">VYST ready</span> in <span id="ms">47</span> ms</div>
         <div><span class="dim">[hmr]</span> updated <span id="file">/team/vibes.tsx</span></div>
       </div>
-      <p class="tag">Four devs who build <em id="swap">fast</em> web products, with security baked in from line one.</p>
+      <p class="tag">Four devs building <em id="swap">fast</em> web and mobile products, plus games—with security baked in from line one.</p>
       <div class="cta">
         <a class="btn p" href="#contact">Hire the team</a>
         <a class="btn" href="#work">See what we shipped</a>
@@ -174,13 +248,49 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
       <div><h3>Fintech and payments</h3><p>Wallets, KYC flows and payment integrations built for the Nigerian market.</p></div>
       <div><h3>Security and OSINT</h3><p>Threat intelligence, hardening and audits before anyone else finds the holes.</p></div>
       <div><h3>Brand and UI</h3><p>Interfaces with a point of view, designed and coded by the same people.</p></div>
+      <div><h3>iOS and Android apps</h3><p>Cross-platform mobile products built to feel right in your hand and work in the real world.</p></div>
+      <div><h3>Game development</h3><p>Game concepts and interactive experiences brought to life with playful, responsive design.</p></div>
+    </div>
+  </section>
+
+  <section id="trusted" class="trusted" aria-labelledby="trusted-title">
+    <div class="trusted-head">
+      <h2 id="trusted-title">Trusted by teams doing big things.</h2>
+      <p class="sub">Good people we’ve worked with. NAIJSEC is also part of a team member’s individual experience.</p>
+    </div>
+    <div class="brand-marquee" aria-label="Organizations VYST has worked with">
+      <div class="brand-track">
+        <ul class="brand-group">
+          <li class="brand"><img src="brand-nnpc.jpg" alt="NNPC — Energy for today, energy for tomorrow"></li>
+          <li class="brand"><img src="brand-savealife-cutout.png" alt="Doctors Save A Life Foundation"></li>
+          <li class="brand"><img src="brand-naijsec-cutout.png" alt="NaijSec Cybersecurity Solutions"></li>
+          <li class="brand"><img src="brand-shell.png" alt="Shell"></li>
+        </ul>
+        <ul class="brand-group" aria-hidden="true">
+          <li class="brand"><img src="brand-nnpc.jpg" alt=""></li>
+          <li class="brand"><img src="brand-savealife-cutout.png" alt=""></li>
+          <li class="brand"><img src="brand-naijsec-cutout.png" alt=""></li>
+          <li class="brand"><img src="brand-shell.png" alt=""></li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section id="work">
     <h2>Stuff we shipped</h2>
-    <p class="sub">Live products from the team. Tap one to open it.</p>
+    <p class="sub">A few things we’ve been building. Get a little preview, then tap through to the live product.</p>
     <div class="work" id="workList"></div>
+  </section>
+
+  <section id="principles">
+    <h2>How we like to build</h2>
+    <p class="sub">A few principles we try to bring to every product, from the first conversation to the final ship.</p>
+    <div class="principles">
+      <article class="principle"><span class="number mono">01 / PEOPLE</span><h3>Make it make sense.</h3><p>Good software should feel clear and useful to the people it’s for—not just clever under the hood.</p></article>
+      <article class="principle"><span class="number mono">02 / OWNERSHIP</span><h3>We own what we ship.</h3><p>Tools can help us move faster. We stay responsible for understanding, checking and standing behind the work.</p></article>
+      <article class="principle"><span class="number mono">03 / QUALITY</span><h3>Test past the happy path.</h3><p>We think through the awkward bits, edge cases and failure states—not only the perfect demo.</p></article>
+      <article class="principle"><span class="number mono">04 / TEAMWORK</span><h3>Build for the next dev.</h3><p>Readable, maintainable code makes it easier for the next person to pick up the work and keep it moving.</p></article>
+    </div>
   </section>
 
   <section id="team">
@@ -189,14 +299,20 @@ footer{border-top:3px solid var(--ink);padding:22px 0 30px;display:flex;justify-
     <div class="team" id="teamList"></div>
   </section>
 
+  <section id="reviews">
+    <h2>Good people. Good things to say.</h2>
+    <p class="sub">A few kind words from people we’ve worked with.</p>
+    <div class="review-track" id="reviewTrack" role="region" aria-label="Swipeable client reviews"></div>
+  </section>
+
   <section id="contact" class="contact">
     <h2>Got a build in mind?</h2>
     <p class="sub">Tell us what you’re making and we’ll reply within a day.</p>
-    <a class="big" id="mail" href="mailto:Trotskybuilds@gmail.com">Trotskybuilds@gmail.com</a>
+    <a class="big" id="mail" href="mailto:Trotskybuilds@gmail.com">Email VYST Systems <span aria-hidden="true">↗</span></a>
   </section>
 
   <footer>
-    <span>© <span id="yr">2026</span> VYST SYSTEMS. Port Harcourt, Nigeria.</span>
+    <span>© <span id="yr">2026</span> VYST SYSTEMS.</span>
   </footer>
 </div>
 
@@ -212,25 +328,69 @@ const CONFIG = {
     {name:"TrotskyBuilds", photo:"trotsky.png", role:"CEO, security and full-stack", color:"--sky", bio:"Threat intel by day, ships platforms by night. Makes sure nothing leaks.", stack:["Next.js","Node","OSINT"], link:"#"}
   ],
   work: [
-    {name:"EventsHub", desc:"Event ticketing platform built for the Nigerian market.", tag:"live", url:"https://eventshubs.vercel.app"},
-    {name:"NaijaStays", desc:"Property marketplace focused on Port Harcourt.", tag:"live", url:"https://naijastays.vercel.app"},
-    {name:"PonHub", desc:"Crypto call-tracking terminal with a live feed of trader calls, tickers and points.", tag:"live", url:"https://www.ponhub.trade/"},
-    {name:"Handl", desc:"Coin launchpad on the Arc network. Launch a coin and let creators claim their fee share through any social platform, pump.fun style.", tag:"beta", url:"https://handls.vercel.app"},
-    {name:"Cashora", desc:"Crypto-to-fiat off-ramp with KYC and a hardened security layer.", tag:"in build", url:"#"}
+    {name:"EventsHub", desc:"Event ticketing platform built for the Nigerian market.", tag:"live", preview:"events", url:"https://eventshubs.vercel.app"},
+    {name:"NaijaStays", desc:"Property marketplace focused on Port Harcourt.", tag:"live", preview:"stays", url:"https://naijastays.vercel.app"},
+    {name:"PonHub", desc:"Crypto call-tracking terminal with a live feed of trader calls, tickers and points.", tag:"live", preview:"ponhub", url:"https://www.ponhub.trade/"},
+    {name:"Handl", desc:"Coin launchpad on the Arc network. Launch a coin and let creators claim their fee share through any social platform, pump.fun style.", tag:"beta", preview:"handl", url:"https://handls.vercel.app"},
+    {name:"Cashora", desc:"Crypto-to-fiat off-ramp with KYC and a hardened security layer.", tag:"in build", preview:"cashora", url:"#"}
   ]
 };
 /* ================================================================ */
 const $=id=>document.getElementById(id);
 const root=document.documentElement;
 
-$("mail").textContent=CONFIG.email;$("mail").href="mailto:"+CONFIG.email;
+const mailto=(greeting,subject)=>`mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`${greeting},\n\nI’d love to get in touch about a project. Here’s a little about what I have in mind:\n\n[Add a few details about your project]\n\nThanks!`)}`;
+$("mail").href=mailto("Hey VYST Systems","Let’s talk about a project");
 $("yr").textContent=new Date().getFullYear();
 
-$("workList").innerHTML=CONFIG.work.map(w=>
-  `<a href="${w.url}" ${w.url.startsWith("http")?'target="_blank" rel="noopener"':''}><h3>${w.name}</h3><span class="st mono">${w.tag}</span><p>${w.desc}</p></a>`).join("");
+const previewCopy={
+  events:{theme:"events",brand:"EventsHub",title:"Find your next event.",copy:"Good plans start here.",tiles:[["FRI 24 OCT","Late Night Live"],["SAT 25 OCT","Made in PH"],["GET TICKETS","Browse events"]],pills:["Music","Culture","Port Harcourt"]},
+  stays:{theme:"stays",brand:"NaijaStays",title:"Feel at home in PH.",copy:"Find a place that fits your stay.",tiles:[["GRA PH","Cozy city apartment"],["2 guests","Available now"],["VIEW STAY","Explore homes"]],pills:["Short lets","Apartments","Port Harcourt"]},
+  ponhub:{theme:"ponhub",brand:"PONHUB",title:"Live calls. Real-time.",copy:"The latest calls from the feed.",tiles:[["$PON","New call · now"],["$VYST","Trending · 4m"],["$SOL","Watching · 9m"]],pills:["LIVE FEED","Volume routed","Top calls"]},
+  handl:{theme:"handl",brand:"handl",title:"Make the fee find them.",copy:"Launch tokens. Route creator fees.",tiles:[["ARGUS","Launch ledger"],["CREATORS","Claim fees"],["NEW TOKEN","Create on Handl"]],pills:["No custody","Verified mapping","On-chain"]},
+  cashora:{theme:"cashora",brand:"Cashora",title:"Your money, in motion.",copy:"A simple view of your account.",tiles:[["BALANCE","Available"],["WALLET","•••• ••••"],["VERIFY","Identity secure"]],pills:["Account","Wallet","Verification"]}
+};
+$("workList").innerHTML=CONFIG.work.map((w,index)=>{
+  const preview=previewCopy[w.preview];
+  const shot=`<div class="project-shot"><div class="mini-site ${preview.theme}" aria-hidden="true"><div class="mini-nav"><span>${preview.brand}</span><span>${preview.tiles[2][1]}</span></div><div class="mini-content"><h4 class="mini-title">${preview.title}</h4><p class="mini-copy">${preview.copy}</p><div class="mini-grid">${preview.tiles.map(([label,text],tileIndex)=>`<div class="mini-tile ${tileIndex===2?"featured":""}"><span>${label}</span><strong>${text}</strong></div>`).join("")}</div><div class="mini-pills">${preview.pills.map(pill=>`<span>${pill}</span>`).join("")}</div></div></div></div>`;
+  const content=`${shot}<h3>${w.name}</h3><span class="st mono ${w.url==="#"?"in-progress":""}">${w.tag}</span><p>${w.desc}</p>${w.url==="#"?'<span class="preview-cta">In the works <span aria-hidden="true">↗</span></span>':'<span class="preview-cta">Visit live site <span aria-hidden="true">↗</span></span>'}`;
+  return w.url.startsWith("http")?`<a href="${w.url}" target="_blank" rel="noopener noreferrer" aria-label="Preview ${w.name} live in a new tab">${content}</a>`:`<article class="work-card">${content}</article>`;
+}).join("");
 
 $("teamList").innerHTML=CONFIG.team.map(m=>
-  `<article class="mem" style="--c:var(${m.color})"><div class="av">${m.photo?`<img src="${m.photo}" alt="${m.name}" onerror="this.remove()">`:''}<span>${m.init||m.name[0]}</span></div><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p><div class="chips">${m.stack.map(s=>`<span>${s}</span>`).join("")}</div><a href="${m.link}">Say hi</a></article>`).join("");
+  `<article class="mem" style="--c:var(${m.color})"><div class="av">${m.photo?`<img src="${m.photo}" alt="${m.name}" onerror="this.remove()">`:''}<span>${m.init||m.name[0]}</span></div><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p><div class="chips">${m.stack.map(s=>`<span>${s}</span>`).join("")}</div><a href="${mailto(`Hey ${m.name}`,"Say hi to "+m.name)}">Say hi <span aria-hidden="true">↗</span></a></article>`).join("");
+
+const reviews=[
+  {name:"Richard",gender:"masculine",skin:"#a96345",hair:"#251b23",shirt:"#ffd23f",back:"#35238a",quote:"Working with VYST felt collaborative from the first conversation. They listened closely, communicated clearly and brought real care to every detail."},
+  {name:"Victor",gender:"masculine",skin:"#75452f",hair:"#171820",shirt:"#7cf5c8",back:"#24165f",quote:"The VYST team made a complex idea feel manageable. They stayed thoughtful and responsive, and kept the focus on the people who would use it."},
+  {name:"Isaiah",gender:"masculine",skin:"#c47b55",hair:"#28202a",shirt:"#ff5da2",back:"#34217c",quote:"What stood out was how open the team was to feedback. Every conversation felt constructive, and we always knew what the next step was."},
+  {name:"Engr. Miachel",gender:"masculine",skin:"#8e563c",hair:"#1e2027",shirt:"#7fb5ff",back:"#26175f",quote:"VYST brought a strong sense of ownership to our collaboration. They were approachable, thoughtful and committed to getting the important details right."},
+  {name:"Dr. Save A Life",gender:"masculine",skin:"#b77652",hair:"#25212a",shirt:"#ff5da2",back:"#38218a",quote:"The team took time to understand our goals and made the collaboration feel clear and personal. Their energy and care made a real difference to the process."},
+  {name:"Princess",gender:"feminine",skin:"#a96345",hair:"#221720",shirt:"#7cf5c8",back:"#24165f",quote:"VYST brought creativity, patience and such good energy to our work together. It was easy to share ideas and shape them into something meaningful."},
+  {name:"Bliss",gender:"feminine",skin:"#75452f",hair:"#181722",shirt:"#7fb5ff",back:"#34217c",quote:"A genuinely lovely team to work with—easy to talk to, full of thoughtful ideas and always attentive to the little things that matter."}
+];
+const reviewerPortrait=reviewer=>{
+  const hair=reviewer.gender==="feminine"
+    ?'<path d="M23 48c-4-17 3-33 18-37 16-5 34 5 35 25l-2 27-9 14-5-25-18-17-15 8-2 30-8-13z" fill="__HAIR__"/>'
+    :'<path d="M27 42c-2-13 2-25 13-30 13-7 29 0 34 12l-3 12-10-9-11 5-8-4-12 10z" fill="__HAIR__"/>';
+  return `<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="50" fill="__BACK__"/><path d="M12 103c3-19 16-30 38-30s35 11 38 30" fill="__SHIRT__"/><rect x="42" y="62" width="16" height="17" rx="7" fill="__SKIN__"/><circle cx="30" cy="48" r="5" fill="__SKIN__"/><circle cx="70" cy="48" r="5" fill="__SKIN__"/><ellipse cx="50" cy="46" rx="20" ry="24" fill="__SKIN__"/>${hair}<ellipse cx="43" cy="48" rx="1.7" ry="2.2" fill="#211a24"/><ellipse cx="57" cy="48" rx="1.7" ry="2.2" fill="#211a24"/><path d="M45 58q5 4 10 0" fill="none" stroke="#713f36" stroke-width="2" stroke-linecap="round"/><path d="M30 43q2-24 20-25 19 1 20 24-5-9-10-13-12 10-30 14z" fill="__HAIR__"/></svg>`
+    .replaceAll("__BACK__",reviewer.back).replaceAll("__SHIRT__",reviewer.shirt).replaceAll("__SKIN__",reviewer.skin).replaceAll("__HAIR__",reviewer.hair);
+};
+$("reviewTrack").innerHTML=reviews.map(review=>
+  `<article class="review-card"><div class="review-top"><div class="review-avatar">${reviewerPortrait(review)}</div><div class="review-person"><strong>${review.name}</strong><small>Client collaborator</small></div></div><div class="review-rating" aria-label="Five out of five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote class="review-quote">“${review.quote}”</blockquote></article>`).join("");
+const reviewTrack=$("reviewTrack");
+let pointerStart=0,pointerScroll=0,dragging=false;
+reviewTrack.addEventListener("pointerdown",event=>{
+  if(event.pointerType!=="mouse"||event.button!==0)return;
+  dragging=true;pointerStart=event.clientX;pointerScroll=reviewTrack.scrollLeft;
+  reviewTrack.classList.add("is-dragging");reviewTrack.setPointerCapture(event.pointerId);
+});
+reviewTrack.addEventListener("pointermove",event=>{
+  if(dragging)reviewTrack.scrollLeft=pointerScroll-(event.clientX-pointerStart);
+});
+const stopReviewDrag=()=>{dragging=false;reviewTrack.classList.remove("is-dragging")};
+reviewTrack.addEventListener("pointerup",stopReviewDrag);
+reviewTrack.addEventListener("pointercancel",stopReviewDrag);
 
 const bits=["VYST","ship it","no cap","HMR","zero build time","⚡","fast","secure","weird"];
 $("mq").innerHTML=Array(2).fill(bits.map(b=>`<span style="margin:0 22px">${b}</span>`).join("")).join("");
